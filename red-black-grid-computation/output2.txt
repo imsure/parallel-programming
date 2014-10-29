@@ -1,0 +1,65 @@
+grid size: 22400
+seq-rb
+Number of MPI ranks: 0	Number of threads: 1	Execution time:3.606 sec	Max difference:0.011927
+Number of MPI ranks: 0	Number of threads: 1	Execution time:3.602 sec	Max difference:0.011927
+Number of MPI ranks: 0	Number of threads: 1	Execution time:3.598 sec	Max difference:0.011927
+mt-rb 2 threads
+Number of MPI ranks: 0	Number of threads: 2	Execution time:3.169 sec	Max difference:0.011927
+Number of MPI ranks: 0	Number of threads: 2	Execution time:3.173 sec	Max difference:0.011927
+Number of MPI ranks: 0	Number of threads: 2	Execution time:3.181 sec	Max difference:0.011927
+mt-rb 4 threads
+Number of MPI ranks: 0	Number of threads: 4	Execution time:3.341 sec	Max difference:0.011927
+Number of MPI ranks: 0	Number of threads: 4	Execution time:3.298 sec	Max difference:0.011927
+Number of MPI ranks: 0	Number of threads: 4	Execution time:3.300 sec	Max difference:0.011927
+mt-rb 8 threads
+Number of MPI ranks: 0	Number of threads: 8	Execution time:3.461 sec	Max difference:0.011927
+Number of MPI ranks: 0	Number of threads: 8	Execution time:3.459 sec	Max difference:0.011927
+Number of MPI ranks: 0	Number of threads: 8	Execution time:3.463 sec	Max difference:0.011927
+dist-rb 2 ranks
+Number of MPI ranks: 2	Number of threads: 0	Execution time:1.900 sec	Max difference:0.011927
+Number of MPI ranks: 2	Number of threads: 0	Execution time:1.916 sec	Max difference:0.011927
+Number of MPI ranks: 2	Number of threads: 0	Execution time:1.884 sec	Max difference:0.011927
+dist-rb 4 ranks
+Number of MPI ranks: 4	Number of threads: 0	Execution time:1.035 sec	Max difference:0.011927
+Number of MPI ranks: 4	Number of threads: 0	Execution time:1.042 sec	Max difference:0.011927
+Number of MPI ranks: 4	Number of threads: 0	Execution time:1.031 sec	Max difference:0.011927
+dist-rb 8 ranks
+Number of MPI ranks: 8	Number of threads: 0	Execution time:0.599 sec	Max difference:0.011927
+Number of MPI ranks: 8	Number of threads: 0	Execution time:0.603 sec	Max difference:0.011927
+Number of MPI ranks: 8	Number of threads: 0	Execution time:0.601 sec	Max difference:0.011927
+hybrid-rb 2 ranks 2 threads
+Number of MPI ranks: 2	Number of threads: 2	Execution time:1.798 sec	Max difference:0.011927
+Number of MPI ranks: 2	Number of threads: 2	Execution time:1.789 sec	Max difference:0.011927
+Number of MPI ranks: 2	Number of threads: 2	Execution time:1.767 sec	Max difference:0.011927
+hybrid-rb 2 ranks 4 threads
+Number of MPI ranks: 2	Number of threads: 4	Execution time:1.847 sec	Max difference:0.011927
+Number of MPI ranks: 2	Number of threads: 4	Execution time:1.842 sec	Max difference:0.011927
+Number of MPI ranks: 2	Number of threads: 4	Execution time:1.917 sec	Max difference:0.011927
+hybrid-rb 2 ranks 8 threads
+Number of MPI ranks: 2	Number of threads: 8	Execution time:1.957 sec	Max difference:0.011927
+Number of MPI ranks: 2	Number of threads: 8	Execution time:1.957 sec	Max difference:0.011927
+Number of MPI ranks: 2	Number of threads: 8	Execution time:1.912 sec	Max difference:0.011927
+hybrid-rb 4 ranks 2 threads
+Number of MPI ranks: 4	Number of threads: 2	Execution time:0.981 sec	Max difference:0.011927
+Number of MPI ranks: 4	Number of threads: 2	Execution time:0.977 sec	Max difference:0.011927
+Number of MPI ranks: 4	Number of threads: 2	Execution time:0.982 sec	Max difference:0.011927
+hybrid-rb 4 ranks 4 threads
+Number of MPI ranks: 4	Number of threads: 4	Execution time:0.998 sec	Max difference:0.011927
+Number of MPI ranks: 4	Number of threads: 4	Execution time:1.008 sec	Max difference:0.011927
+Number of MPI ranks: 4	Number of threads: 4	Execution time:1.008 sec	Max difference:0.011927
+hybrid-rb 4 ranks 8 threads
+Number of MPI ranks: 4	Number of threads: 8	Execution time:1.059 sec	Max difference:0.011927
+Number of MPI ranks: 4	Number of threads: 8	Execution time:1.057 sec	Max difference:0.011927
+Number of MPI ranks: 4	Number of threads: 8	Execution time:1.060 sec	Max difference:0.011927
+hybrid-rb 8 ranks 2 threads
+Number of MPI ranks: 8	Number of threads: 2	Execution time:0.575 sec	Max difference:0.011927
+Number of MPI ranks: 8	Number of threads: 2	Execution time:0.565 sec	Max difference:0.011927
+Number of MPI ranks: 8	Number of threads: 2	Execution time:0.570 sec	Max difference:0.011927
+hybrid-rb 8 ranks 4 threads
+Number of MPI ranks: 8	Number of threads: 4	Execution time:0.579 sec	Max difference:0.011927
+Number of MPI ranks: 8	Number of threads: 4	Execution time:0.584 sec	Max difference:0.011927
+Number of MPI ranks: 8	Number of threads: 4	Execution time:0.588 sec	Max difference:0.011927
+hybrid-rb 8 ranks 8 threads
+Number of MPI ranks: 8	Number of threads: 8	Execution time:0.629 sec	Max difference:0.011927
+Number of MPI ranks: 8	Number of threads: 8	Execution time:0.635 sec	Max difference:0.011927
+Number of MPI ranks: 8	Number of threads: 8	Execution time:0.641 sec	Max difference:0.011927
