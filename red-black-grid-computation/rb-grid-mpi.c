@@ -175,6 +175,7 @@ double compute_grid_black_max( double **grid, int gridsize, int strip_size, int 
  *
  * This should be the reason why the code does not work with large input size!!!
  */
+#if 0
 void exchange_rows( double **grid, int gridsize, int strip_size, int rank )
 {
   if (rank != 0)
@@ -185,6 +186,32 @@ void exchange_rows( double **grid, int gridsize, int strip_size, int rank )
     MPI_Recv( grid[0], gridsize, MPI_DOUBLE, rank-1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE );
   if (rank != num_nodes-1)
     MPI_Recv( grid[strip_size-1], gridsize, MPI_DOUBLE, rank+1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE );
+}
+#endif
+
+void exchange_rows( double **grid, int gridsize, int strip_size, int rank )
+{
+  MPI_Request request_up;
+  MPI_Request request_down;
+  MPI_Status  status;
+
+  if (rank != 0) {
+    MPI_Isend( grid[1], gridsize, MPI_DOUBLE, rank-1, 0, MPI_COMM_WORLD, &request_up );
+  }
+  if (rank != num_nodes-1) {
+    MPI_Isend( grid[strip_size-2], gridsize, MPI_DOUBLE, rank+1, 0, MPI_COMM_WORLD, &request_down );
+  }
+  if (rank != 0)
+    MPI_Recv( grid[0], gridsize, MPI_DOUBLE, rank-1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE );
+  if (rank != num_nodes-1)
+    MPI_Recv( grid[strip_size-1], gridsize, MPI_DOUBLE, rank+1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE );
+
+  if (rank != 0) {
+    MPI_Wait( &request_up, &status );
+  }
+  if (rank != num_nodes-1) {
+    MPI_Wait( &request_down, &status );
+  }
 }
 
 void print_grid( double **grid, int myrank,
