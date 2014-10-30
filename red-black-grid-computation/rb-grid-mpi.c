@@ -1,5 +1,5 @@
 /**
- * MPI solution for red-black tree grid computation.
+ * MPI solution for red-black grid computation.
  *
  * Author: Shuo Yang
  */
@@ -158,6 +158,23 @@ double compute_grid_black_max( double **grid, int gridsize, int strip_size, int 
   return maxdiff;
 }
 
+/**
+ * This is not working for message beyond certain size because:
+ * Suppose num_nodes=2, we have two nodes rank 0 and rank 1.
+ *         rank 0               rank 1
+ *         MPI_Send(1)          MPI_Send(0)
+ *         MPI_Recv(1)          MPI_Recv(0)
+ *
+ * This is a typical error occurs often in MPI programming due to poor
+ * semantics of MPI_Send. Some implementation of MPI may utilitze an
+ * internal buffer for sending messages. But if the message we are going
+ * to send is bigger than the buffer, MPI_Send will be a blocking send,
+ * waiting for a ACK from receiver. Otherwise MPI_Send is nonblocking and
+ * returns immediately when the buffer (message buffer, not the internal buffer)
+ * is available to use.
+ *
+ * This should be the reason why the code does not work with large input size!!!
+ */
 void exchange_rows( double **grid, int gridsize, int strip_size, int rank )
 {
   if (rank != 0)
