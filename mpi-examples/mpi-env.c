@@ -20,7 +20,8 @@ int main( int argc, char *argv[] )
     MPI_Get_version( &version, &subversion );
     printf( "MPI standard version: %d.%d\n", version, subversion );
     printf( "Number of task: %d\n", numtasks );
-    printf( "Upper bound for the MPI tag value: %d\n", MPI_TAG_UB );
+    printf( "MPI_ANY_TAG = %d\n", MPI_ANY_TAG );
+    printf( "size of MPI_ANY_TAG = %ld\n", sizeof(MPI_ANY_TAG) );
   }
 
   printf( "Rank %d is running on %s\n", myrank, hostname );
