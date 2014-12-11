@@ -19,7 +19,7 @@ int main( int argc, char *argv[] )
     strcpy( msg, "hello world" );
     MPI_Send( msg, strlen(msg)+1, MPI_CHAR, 1, 99, MPI_COMM_WORLD );
   } else if (myrank == 1) {
-    MPI_Recv( msg, 20, MPI_CHAR, 0, 99, MPI_COMM_WORLD, &status );
+    MPI_Recv( msg, 20, MPI_CHAR, MPI_ANY_SOURCE, 99, MPI_COMM_WORLD, MPI_STATUS_IGNORE );
     printf( "received: %s\n", msg );
   }
 
